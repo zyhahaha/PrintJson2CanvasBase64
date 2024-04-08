@@ -99,7 +99,10 @@ function calculateAfterDrugStaryYValue (index, drawingData, dragStartY, item, li
 }
 
 // 核心绘制方法
-export function PrintJson2CanvasBase64 (drawingData, canvasWidth, imageData) {
+export function PrintJson2CanvasBase64(drawingData, canvasWidth, imageData) {
+    if (!document) {
+        throw new Error('请在浏览器环境运行!');
+    }
     // console.log('drawingDatadrawingData', drawingData)
     // console.log('imageDataimageData', imageData)
     const canvas = document.createElement("canvas");
