@@ -1,5 +1,5 @@
 {
-  "name": "print-json2canvas-base64",
+  "name": "json2canvas.base64",
   "version": "1.0.0",
   "description": "print json 2 canvas base64",
   "main": "index.js",
