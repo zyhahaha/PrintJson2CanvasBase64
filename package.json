@@ -1,0 +1,24 @@
+{
+  "name": "print-json2canvas-base64",
+  "version": "1.0.0",
+  "description": "print json 2 canvas base64",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zyhahaha/PrintJson2CanvasBase64.git"
+  },
+  "keywords": [
+    "print",
+    "canvas",
+    "base64"
+  ],
+  "author": "simoon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zyhahaha/PrintJson2CanvasBase64/issues"
+  },
+  "homepage": "https://github.com/zyhahaha/PrintJson2CanvasBase64#readme"
+}
