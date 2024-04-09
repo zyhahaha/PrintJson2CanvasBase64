@@ -1,4 +1,4 @@
-const JsBarcode = require('jsbarcode');
+import JsBarcode from 'jsbarcode';
 // 换行文本绘制
 function wrapTextFn (context, text, x, startY, maxWidth, lineHeight) {
     const lines = [];

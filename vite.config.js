@@ -10,6 +10,9 @@ export default defineConfig({
             name: 'json2canvas.base64',
             // the proper extensions will be added
             fileName: 'json2canvas.base64'
+        },
+        rollupOptions: {
+            external: ['jsbarcode']
         }
     }
 })

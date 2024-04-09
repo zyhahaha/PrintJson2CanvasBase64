@@ -1,4 +1,4 @@
-(function(u,p){typeof exports=="object"&&typeof module<"u"?p(exports):typeof define=="function"&&define.amd?define(["exports"],p):(u=typeof globalThis<"u"?globalThis:u||self,p((u.json2canvas=u.json2canvas||{},u.json2canvas.base64={})))})(this,function(u){"use strict";const p=require("jsbarcode");function g(o,c,a,n,i,t){const l=[],s="";let e="";for(let r=0;r<c.length;r++){const f=c[r];o.measureText(e+f+s).width<i&&f!==`
+(function(u,p){typeof exports=="object"&&typeof module<"u"?p(exports,require("jsbarcode")):typeof define=="function"&&define.amd?define(["exports","jsbarcode"],p):(u=typeof globalThis<"u"?globalThis:u||self,p((u.json2canvas=u.json2canvas||{},u.json2canvas.base64={}),u.JsBarcode))})(this,function(u,p){"use strict";function g(o,c,a,n,i,t){const l=[],s="";let e="";for(let r=0;r<c.length;r++){const f=c[r];o.measureText(e+f+s).width<i&&f!==`
 `?e+=f+s:(f===`
 `&&(e+=f,r++),l.push(e),e=f+s)}return l.push(e),l.forEach(r=>{o.fillText(r.trim(),a,n),n+=t}),l.length}function v(o,c,a,n){const i=[],t="";let l="";o.font=`${n}px 宋体`;for(let s=0;s<c.length;s++){const e=c[s];o.measureText(l+e+t).width<a&&e!==`
 `?l+=e+t:(e===`

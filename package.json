@@ -1,12 +1,14 @@
 {
   "name": "json2canvas.base64",
+  "type": "module",
   "version": "1.0.0",
   "description": "print json 2 canvas base64",
-  "main": "dist/json2canvas.base64.mjs",
+  "main": "dist/json2canvas.base64.js",
   "files": [
     "dist/*"
   ],
   "scripts": {
+    "dev": "vite --open /example/index.html",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "vite build"
   },
