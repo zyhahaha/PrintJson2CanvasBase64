@@ -105,5 +105,5 @@ function v(i, c, f) {
   }), n.toDataURL();
 }
 export {
-  v as PrintJson2CanvasBase64
+  v as printJson2CanvasBase64
 };

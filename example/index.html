@@ -10,7 +10,7 @@
     <img src="" alt="">
 </body>
 <script type="module">
-    import { PrintJson2CanvasBase64 } from '../dist/json2canvas.base64.js'
+    import { printJson2CanvasBase64 } from '../dist/json2canvas.base64.js'
 
     function preloadImageFn (src) {
         return new Promise((resolve, reject) => {
@@ -52,7 +52,7 @@
             height: 200 // 图片高度，根据需要调整
         }
     ]
-    const base64Data = PrintJson2CanvasBase64(printJson, 500, imageData)
+    const base64Data = printJson2CanvasBase64(printJson, 500, imageData)
 
     console.log(base64Data)
 
