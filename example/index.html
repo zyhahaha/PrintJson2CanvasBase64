@@ -11,6 +11,19 @@
 </body>
 <script type="module">
     import { PrintJson2CanvasBase64 } from '../dist/json2canvas.base64.js'
+
+    function preloadImageFn (src) {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.crossOrigin = "anonymous";
+            img.onload = () => resolve(img);
+            img.onerror = reject;
+            img.src = src;
+        });
+    }
+    const imgSrc = 'https://bpic.588ku.com/element_origin_min_pic/01/37/31/24573c46572f507.jpg'
+    const imageData = await preloadImageFn(imgSrc)
+
     const printJson = [
         {
             type: "text",
@@ -31,9 +44,15 @@
             fontSize: "20", // 条形码文本字体大小
             textMargin: 5, // 文本与条形码的间距
             textAlign: "center" // 文本对齐方式
+        },
+        {
+            type: "image",
+            src: imgSrc,
+            width: 200, // 图片宽度，根据需要调整
+            height: 200 // 图片高度，根据需要调整
         }
     ]
-    const base64Data = PrintJson2CanvasBase64(printJson, 500)
+    const base64Data = PrintJson2CanvasBase64(printJson, 500, imageData)
 
     console.log(base64Data)
 
