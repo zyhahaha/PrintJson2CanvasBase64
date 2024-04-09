@@ -1,4 +1,4 @@
-// var JsBarcode = require('jsbarcode');
+const JsBarcode = require('jsbarcode');
 // 换行文本绘制
 function wrapTextFn (context, text, x, startY, maxWidth, lineHeight) {
     const lines = [];
@@ -164,33 +164,31 @@ export function PrintJson2CanvasBase64(drawingData, canvasWidth, imageData) {
             });
         }
 
-        // if (item.type === 'barcode') {
-        //     drawList.push(() => {
-        //         const barcodeCanvas = document.createElement('canvas');
-        //         barcodeCanvas.width = item.width; // 条形码的宽度
-        //         barcodeCanvas.height = item.height; // 条形码的高度
-        //         JsBarcode(barcodeCanvas, item.content, {
-        //             format: "CODE128", // 假设条形码格式为CODE128
-        //             lineColor: "#000", // 条形码颜色
-        //             displayValue: true, // 根据需要决定是否在条形码下方显示文本值
-        //             text: item.content, // 条形码下方的文本
-        //             textMargin: item.textMargin, // 文本与条形码的间距
-        //             width: 2,
-        //             height: 40,
-        //             background: "" // 条形码背景颜色
-        //         });
-        //         // 将条形码绘制到主canvas上
-        //         if (item.position === "absolute") {
-        //             ctx.drawImage(barcodeCanvas, canvas.width - barcodeCanvas.width, dragStartY.value - barcodeCanvas.height);
-        //         } else {
-        //             ctx.drawImage(barcodeCanvas, canvas.width / 2 - barcodeCanvas.width / 2, dragStartY.value - barcodeCanvas.height);
-        //         }
-        //         calculateAfterDrugStaryYValue(index, drawingData, dragStartY, item);
-        //     })
-        // }
+        if (item.type === 'barcode') {
+            drawList.push(() => {
+                const barcodeCanvas = document.createElement('canvas');
+                barcodeCanvas.width = item.width; // 条形码的宽度
+                barcodeCanvas.height = item.height; // 条形码的高度
+                JsBarcode(barcodeCanvas, item.content, {
+                    format: "CODE128", // 假设条形码格式为CODE128
+                    lineColor: "#000", // 条形码颜色
+                    displayValue: true, // 根据需要决定是否在条形码下方显示文本值
+                    text: item.content, // 条形码下方的文本
+                    textMargin: item.textMargin, // 文本与条形码的间距
+                    width: 2,
+                    height: 40,
+                    background: "" // 条形码背景颜色
+                });
+                // 将条形码绘制到主canvas上
+                if (item.position === "absolute") {
+                    ctx.drawImage(barcodeCanvas, canvas.width - barcodeCanvas.width, dragStartY.value - barcodeCanvas.height);
+                } else {
+                    ctx.drawImage(barcodeCanvas, canvas.width / 2 - barcodeCanvas.width / 2, dragStartY.value - barcodeCanvas.height);
+                }
+                calculateAfterDrugStaryYValue(index, drawingData, dragStartY, item);
+            })
+        }
         if (item.type === 'image') {
-            // const img = new Image(); // 创建一个新的Image对象
-            // img.src = item.src; // 设置图片源URL，开始加载图片=
             drawList.push(() => {
                 // 在图片加载完成后执行绘制
                 ctx.drawImage(imageData, canvas.width / 2 - item.width / 2, dragStartY.value - item.height, item.width, item.height);

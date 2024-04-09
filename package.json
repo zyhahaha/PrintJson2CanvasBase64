@@ -27,5 +27,8 @@
   "homepage": "https://github.com/zyhahaha/PrintJson2CanvasBase64#readme",
   "devDependencies": {
     "vite": "^5.2.8"
+  },
+  "dependencies": {
+    "jsbarcode": "^3.11.6"
   }
 }
