@@ -2,9 +2,13 @@
   "name": "json2canvas.base64",
   "version": "1.0.0",
   "description": "print json 2 canvas base64",
-  "main": "index.js",
+  "main": "dist/json2canvas.base64.umd.js",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vite build"
   },
   "repository": {
     "type": "git",
@@ -20,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/zyhahaha/PrintJson2CanvasBase64/issues"
   },
-  "homepage": "https://github.com/zyhahaha/PrintJson2CanvasBase64#readme"
+  "homepage": "https://github.com/zyhahaha/PrintJson2CanvasBase64#readme",
+  "devDependencies": {
+    "vite": "^5.2.8"
+  }
 }
