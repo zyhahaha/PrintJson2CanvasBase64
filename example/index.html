@@ -19,6 +19,18 @@
             textAlign: "start",
             content: `hello! 你好！`,
             wrapText: true,
+        },
+        {
+            type: "barcode",
+            content: '3405896708324023',
+            width: 200, // 条形码宽度，根据实际需求调整
+            height: 100, // 条形码高度，根据实际需求调整
+            displayValue: true, // 显示条形码下方的文本（订单号）
+            text: `平台订单号：${orderNo}`,
+            format: "CODE128", // 条形码格式
+            fontSize: "20", // 条形码文本字体大小
+            textMargin: 5, // 文本与条形码的间距
+            textAlign: "center" // 文本对齐方式
         }
     ]
     const base64Data = PrintJson2CanvasBase64(printJson, 500)
